@@ -11,17 +11,16 @@ xtables_multi_CFLAGS  += -DALL_INCLUSIVE
 endif
 if ENABLE_IPV4
 xtables_multi_SOURCES += iptables-save.c iptables-restore.c \
-                         iptables-standalone.c iptables.c
+                         iptables-standalone.c
 xtables_multi_CFLAGS  += -DENABLE_IPV4
 xtables_multi_LDADD   += ../libiptc/libip4tc.la ../extensions/libext4.a
 endif
 if ENABLE_IPV6
 xtables_multi_SOURCES += ip6tables-save.c ip6tables-restore.c \
-                          ip6tables-standalone.c ip6tables.c
+                          ip6tables-standalone.c
 xtables_multi_CFLAGS  += -DENABLE_IPV6
 xtables_multi_LDADD   += ../libiptc/libip6tc.la ../extensions/libext6.a
 endif
-xtables_multi_SOURCES += xshared.c
 xtables_multi_LDADD   += ../libxtables/libxtables.la -lm
 
 sbin_PROGRAMS    = xtables-multi
