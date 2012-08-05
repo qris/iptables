@@ -3,6 +3,7 @@
 *.lo
 *.so
 *.o
+*~
 .deps/
 .dirstamp
 .libs/
