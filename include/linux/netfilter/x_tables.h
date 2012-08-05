@@ -133,7 +133,7 @@ struct xt_counters_info {
 	for (__i = sizeof(type);				\
 	     __i < (e)->target_offset;				\
 	     __i += __m->u.match_size) {			\
-		__m = (void *)e + __i;				\
+		__m = (struct xt_entry_match *)((char *)e + __i);	\
 								\
 		__ret = fn(__m , ## args);			\
 		if (__ret != 0)					\
